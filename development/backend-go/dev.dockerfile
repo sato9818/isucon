@@ -1,4 +1,4 @@
-FROM golang:1.16.5-buster
+FROM golang:1.21.3
 
 WORKDIR /development
 COPY development/backend-go/air.toml .
@@ -9,11 +9,11 @@ RUN apt-get update \
 
 WORKDIR /webapp/go
 
-ENV DOCKERIZE_VERSION v0.6.1
+ENV DOCKERIZE_VERSION v0.7.0
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && go get -u github.com/cosmtrek/air
+    && go install github.com/cosmtrek/air@latest
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
