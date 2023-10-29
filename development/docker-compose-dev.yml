@@ -200,7 +200,7 @@ services:
       - "../development/mysql-backend/1_Constraint.sql:/docker-entrypoint-initdb.d/1_Constraint.sql"
       - "../development/mysql-backend/2_Init.sql:/docker-entrypoint-initdb.d/2_Init.sql"
     expose:
-      - "3306"
+      - "3306:3306"
     ports:
       - "127.0.0.1::3306"
 
@@ -208,7 +208,7 @@ services:
     image: golang:1.16.5-buster
     restart: always
     working_dir: /jiaapi
-    command: ["go", "run", "."]
+    command: [ "go", "run", "." ]
     ports:
       - "5000:5000"
     volumes:
