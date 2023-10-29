@@ -19,7 +19,6 @@
     - langs.php
     - langs.python
     - langs.ruby
-    - langs.rust
     - contestant
 
 - name: "contestant roles for the qualify day"
@@ -33,7 +32,6 @@
   tags: [bench]
   roles:
     - langs.go
-    - langs.rust
     - bench
 
 - name: "bench roles for the qualify day"
@@ -52,7 +50,6 @@
     - langs.php
     - langs.python
     - langs.ruby
-    - langs.rust
     - contestant
     - bench
 
